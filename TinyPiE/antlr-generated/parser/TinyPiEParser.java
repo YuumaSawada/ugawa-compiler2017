@@ -1,4 +1,4 @@
-// Generated from parser/TinyPiE.g4 by ANTLR 4.6
+// Generated from parser/TinyPiE.g4 by ANTLR 4.7
 package parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,13 +11,13 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class TinyPiEParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, ADDOP=3, MULOP=4, ANDOP=5, NOTOP=6, IDENTIFIER=7, VALUE=8, 
+		T__0=1, T__1=2, ADDOP=3, MULOP=4, ANDOP=5, IDENTIFIER=6, NOTOP=7, VALUE=8, 
 		WS=9;
 	public static final int
 		RULE_expr = 0, RULE_andExpr = 1, RULE_addExpr = 2, RULE_mulExpr = 3, RULE_unaryExpr = 4;
@@ -29,7 +29,7 @@ public class TinyPiEParser extends Parser {
 		null, "'('", "')'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, "ADDOP", "MULOP", "ANDOP", "NOTOP", "IDENTIFIER", "VALUE", 
+		null, null, null, "ADDOP", "MULOP", "ANDOP", "IDENTIFIER", "NOTOP", "VALUE", 
 		"WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
@@ -452,19 +452,19 @@ public class TinyPiEParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\13:\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\13:\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\7\3\25\n\3"+
 		"\f\3\16\3\30\13\3\3\4\3\4\3\4\3\4\3\4\3\4\7\4 \n\4\f\4\16\4#\13\4\3\5"+
 		"\3\5\3\5\3\5\3\5\3\5\7\5+\n\5\f\5\16\5.\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3"+
-		"\6\3\6\5\68\n\6\3\6\2\5\4\6\b\7\2\4\6\b\n\2\2:\2\f\3\2\2\2\4\16\3\2\2"+
-		"\2\6\31\3\2\2\2\b$\3\2\2\2\n\67\3\2\2\2\f\r\5\4\3\2\r\3\3\2\2\2\16\17"+
+		"\6\3\6\5\68\n\6\3\6\2\5\4\6\b\7\2\4\6\b\n\2\2\2:\2\f\3\2\2\2\4\16\3\2"+
+		"\2\2\6\31\3\2\2\2\b$\3\2\2\2\n\67\3\2\2\2\f\r\5\4\3\2\r\3\3\2\2\2\16\17"+
 		"\b\3\1\2\17\20\5\6\4\2\20\26\3\2\2\2\21\22\f\4\2\2\22\23\7\7\2\2\23\25"+
 		"\5\6\4\2\24\21\3\2\2\2\25\30\3\2\2\2\26\24\3\2\2\2\26\27\3\2\2\2\27\5"+
 		"\3\2\2\2\30\26\3\2\2\2\31\32\b\4\1\2\32\33\5\b\5\2\33!\3\2\2\2\34\35\f"+
 		"\4\2\2\35\36\7\5\2\2\36 \5\b\5\2\37\34\3\2\2\2 #\3\2\2\2!\37\3\2\2\2!"+
 		"\"\3\2\2\2\"\7\3\2\2\2#!\3\2\2\2$%\b\5\1\2%&\5\n\6\2&,\3\2\2\2\'(\f\4"+
 		"\2\2()\7\6\2\2)+\5\n\6\2*\'\3\2\2\2+.\3\2\2\2,*\3\2\2\2,-\3\2\2\2-\t\3"+
-		"\2\2\2.,\3\2\2\2/8\7\n\2\2\608\7\t\2\2\61\62\7\b\2\2\628\5\n\6\2\63\64"+
+		"\2\2\2.,\3\2\2\2/8\7\n\2\2\608\7\b\2\2\61\62\7\t\2\2\628\5\n\6\2\63\64"+
 		"\7\3\2\2\64\65\5\2\2\2\65\66\7\4\2\2\668\3\2\2\2\67/\3\2\2\2\67\60\3\2"+
 		"\2\2\67\61\3\2\2\2\67\63\3\2\2\28\13\3\2\2\2\6\26!,\67";
 	public static final ATN _ATN =

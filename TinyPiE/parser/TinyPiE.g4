@@ -18,15 +18,15 @@ mulExpr: mulExpr MULOP unaryExpr
 	
 unaryExpr: VALUE			# literalExpr
 	| IDENTIFIER			# varExpr
-	| NOTOP	unaryExpr			# notExpr
+	| NOTOP		unaryExpr	# notExpr
 	| '(' expr ')'			# parenExpr
 	;
 
 ADDOP: '+'|'-';
 MULOP: '*'|'/';
 ANDOP: '&'|'|';
-NOTOP: '-'|'~';
 
 IDENTIFIER: 'x'|'y'|'z';
+NOTOP:'-'|'~';
 VALUE: [1-9][0-9]*;
 WS: [ \t\r\n] -> skip;

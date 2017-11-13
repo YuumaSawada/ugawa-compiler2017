@@ -11,40 +11,32 @@ import parser.TinyPiEParser;
 
 public class Interpreter extends InterpreterBase {
 	int evalExpr(ASTNode ndx, Environment env) {
-		if(ndx instanceof ASTBinaryExprNode) {
+		if (ndx instanceof ASTBinaryExprNode) {
 			ASTBinaryExprNode nd = (ASTBinaryExprNode) ndx;
-			if(nd.op.equals("+")) {
-				return evalExpr(nd.lhs,env) + evalExpr(nd.rhs, env);
-			}else if(nd.op.equals("-")) {
-				return evalExpr(nd.lhs,env) - evalExpr(nd.rhs, env);
-			}else {
-				throw new Error("unknown binary operator");
-			}
-		}else if(ndx instanceof ASTNumberNode) {
+			int lhsValue = evalExpr(nd.lhs, env);
+			int rhsValue = evalExpr(nd.rhs, env);
+			if (nd.op.equals("+"))
+			return lhsValue + rhsValue;
+			else if (nd.op.equals("-"))
+			return lhsValue - rhsValue;
+			else if (nd.op.equals("*"))
+			return lhsValue * rhsValue;
+			else if (nd.op.equals("/"))
+			return lhsValue / rhsValue;
+			else
+			throw new Error("Unknwon operator: "+nd.op);
+			} else if (ndx instanceof ASTNumberNode) {
 			ASTNumberNode nd = (ASTNumberNode) ndx;
-			if(Integer.toString(nd.value).equals(null)) {
-				throw new Error("unknown binary operator");
-			}else {
-				int value = nd.value;
-				return value;
-			}
-		}else if(ndx instanceof ASTVarRefNode) {
+			return nd.value;
+			} else if (ndx instanceof ASTVarRefNode) {
 			ASTVarRefNode nd = (ASTVarRefNode) ndx;
-			if(nd.varName == "x") {
-				int varName = 1;
-				return varName;
-			}else if(nd.varName == "y") {
-				int varName = 10;
-				return varName;
-			}else if(nd.varName == "zß") {
-				int varName = -1;
-				return varName;
-			}else {
-				throw new Error("unknown binary operator");
+			Variable var = env.lookup(nd.varName);
+			if (var == null)
+			throw new Error("Undefined variable: "+nd.varName);
+			return var.get();
+			} else {
+			throw new Error("Unknown expression: "+ndx);
 			}
-		}
-		return 0;
-		//throw new Error("Not implemented yet");
 	}
 
 	public int eval(ASTNode ast) {
