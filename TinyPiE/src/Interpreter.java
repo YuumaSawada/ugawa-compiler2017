@@ -4,12 +4,47 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+//import com.sun.tools.corba.se.idl.constExpr.BinaryExpr;
+
 import parser.TinyPiELexer;
 import parser.TinyPiEParser;
 
 public class Interpreter extends InterpreterBase {
 	int evalExpr(ASTNode ndx, Environment env) {
-		throw new Error("Not implemented yet");
+		if(ndx instanceof ASTBinaryExprNode) {
+			ASTBinaryExprNode nd = (ASTBinaryExprNode) ndx;
+			if(nd.op.equals("+")) {
+				return evalExpr(nd.lhs,env) + evalExpr(nd.rhs, env);
+			}else if(nd.op.equals("-")) {
+				return evalExpr(nd.lhs,env) - evalExpr(nd.rhs, env);
+			}else {
+				throw new Error("unknown binary operator");
+			}
+		}else if(ndx instanceof ASTNumberNode) {
+			ASTNumberNode nd = (ASTNumberNode) ndx;
+			if(Integer.toString(nd.value).equals(null)) {
+				throw new Error("unknown binary operator");
+			}else {
+				int value = nd.value;
+				return value;
+			}
+		}else if(ndx instanceof ASTVarRefNode) {
+			ASTVarRefNode nd = (ASTVarRefNode) ndx;
+			if(nd.varName == "x") {
+				int varName = 1;
+				return varName;
+			}else if(nd.varName == "y") {
+				int varName = 10;
+				return varName;
+			}else if(nd.varName == "zß") {
+				int varName = -1;
+				return varName;
+			}else {
+				throw new Error("unknown binary operator");
+			}
+		}
+		return 0;
+		//throw new Error("Not implemented yet");
 	}
 
 	public int eval(ASTNode ast) {

@@ -17,14 +17,14 @@ public class TinyPiELexer extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, ADDOP=3, MULOP=4, ANDOP=5, IDENTIFIER=6, NOTOP=7, VALUE=8, 
+		T__0=1, T__1=2, ADDOP=3, MULOP=4, ANDOP=5, NOTOP=6, IDENTIFIER=7, VALUE=8, 
 		WS=9;
 	public static String[] modeNames = {
 		"DEFAULT_MODE"
 	};
 
 	public static final String[] ruleNames = {
-		"T__0", "T__1", "ADDOP", "MULOP", "ANDOP", "IDENTIFIER", "NOTOP", "VALUE", 
+		"T__0", "T__1", "ADDOP", "MULOP", "ANDOP", "NOTOP", "IDENTIFIER", "VALUE", 
 		"WS"
 	};
 
@@ -32,7 +32,7 @@ public class TinyPiELexer extends Lexer {
 		null, "'('", "')'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, "ADDOP", "MULOP", "ANDOP", "IDENTIFIER", "NOTOP", "VALUE", 
+		null, null, null, "ADDOP", "MULOP", "ANDOP", "NOTOP", "IDENTIFIER", "VALUE", 
 		"WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
@@ -100,7 +100,7 @@ public class TinyPiELexer extends Lexer {
 		"\3\2\2\2\5\27\3\2\2\2\7\31\3\2\2\2\t\33\3\2\2\2\13\35\3\2\2\2\r\37\3\2"+
 		"\2\2\17!\3\2\2\2\21#\3\2\2\2\23*\3\2\2\2\25\26\7*\2\2\26\4\3\2\2\2\27"+
 		"\30\7+\2\2\30\6\3\2\2\2\31\32\t\2\2\2\32\b\3\2\2\2\33\34\t\3\2\2\34\n"+
-		"\3\2\2\2\35\36\t\4\2\2\36\f\3\2\2\2\37 \4z|\2 \16\3\2\2\2!\"\t\5\2\2\""+
+		"\3\2\2\2\35\36\t\4\2\2\36\f\3\2\2\2\37 \t\5\2\2 \16\3\2\2\2!\"\4z|\2\""+
 		"\20\3\2\2\2#\'\t\6\2\2$&\t\7\2\2%$\3\2\2\2&)\3\2\2\2\'%\3\2\2\2\'(\3\2"+
 		"\2\2(\22\3\2\2\2)\'\3\2\2\2*+\t\b\2\2+,\3\2\2\2,-\b\n\2\2-\24\3\2\2\2"+
 		"\4\2\'\3\b\2\2";
