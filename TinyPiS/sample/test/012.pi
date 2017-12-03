@@ -3,7 +3,7 @@
   x = 5;
   y = 0;
   z = 0;
-  if (z){
+  if (x){
   while (x) {
     x = x - 1;
     y = y + 2;
@@ -11,6 +11,6 @@
   }else{
   y = 0;
   }
-  answer = y;
+  print y;
 }
 

@@ -1,4 +1,6 @@
-function main() {
-  return 2 * (3 + 4);
+var x;
+{
+  x = 2 * (3 + 4) +1;
+  print x;
 }
 

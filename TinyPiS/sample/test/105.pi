@@ -2,5 +2,5 @@ var x;
 {
   x = -1;
   x = x - 255;
-  answer = x;
+  print x;
 }
